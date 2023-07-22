@@ -31,8 +31,22 @@ export default function Editor() {
         editor={editor} 
       />
       { editor && (
-        <BubbleMenu editor={editor}>
-          <button>bold</button>
+        <BubbleMenu 
+          className='bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600' 
+          editor={editor}
+        >
+          <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600 '>
+            bold
+          </button>
+          <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600'>
+            bold
+          </button>
+          <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600'>
+            bold
+          </button>
+          <button className='p-2 text-zinc-200 text-sm flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600'>
+            bold
+          </button>
         </BubbleMenu>
       )}
     </>
