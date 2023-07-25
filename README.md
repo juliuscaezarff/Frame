@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
+# Frame
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frame é uma aplicação React que tem as funcionalidades do notion, usando a biblioteca titap que me permite usar componentes onde posso editar texto.
+A ideia é que o frame é uma janela aberta no mac, por isso o layout faz referência a um aplicativo aberto no macbook.
 
-Currently, two official plugins are available:
+## Techs stack 💾
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Reactjs 
+- Vite
+- Typescript
+- TipTap
+- Tailwindcss
 
-## Expanding the ESLint configuration
+## Como instalar o projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
+- Baixe o repo
+```js
+   git clone
+```
+- Após baixar entre na pasta e instale as dependências 
+```js
+   npm install 
+```
+- Após baixar as dependências, rode o projeto
 
 ```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+   npm run dev 
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
