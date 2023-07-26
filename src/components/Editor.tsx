@@ -30,7 +30,7 @@ export default function Editor() {
         lowlight
       })
     ],
-    content: '<h1>Escreva algo</h1>',
+    content: '<h1>Getting Started</h1> <p>Olá 👋🏻, comece por aqui</p>',
     editorProps: {
       attributes: {
         class: 'outline-none'
@@ -75,16 +75,21 @@ export default function Editor() {
             </div>
           </button>
 
-          <button className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-600">
+          <button
+            className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-600"
+            onClick={() =>
+              editor.chain().focus().toggleHeading({ level: 2 }).run()
+            }
+          >
             <img
-              src=""
+              src="http://www.notion.so/images/blocks/subheader.9aab4769.png"
               alt="text"
               className="w-12 border border-zinc-600 rounded"
             />
             <div className="flex flex-col text-left">
               <span className="text-sm">Heading 2</span>
               <span className="text-xs text-zinc-400">
-                Big section heading.
+                Medium section heading.
               </span>
             </div>
           </button>
