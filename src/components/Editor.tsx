@@ -6,6 +6,9 @@ import {
 } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
+import TaskItem from '@tiptap/extension-task-item'
+import TaskList from '@tiptap/extension-task-list'
+
 import { lowlight } from 'lowlight'
 import js from 'highlight.js/lib/languages/javascript'
 import {
@@ -19,6 +22,7 @@ import {
 
 import 'highlight.js/styles/atom-one-dark.css'
 import { BubbleButton } from './BubblleButton'
+import '../styles.css'
 
 lowlight.registerLanguage('js', js)
 
@@ -28,9 +32,14 @@ export default function Editor() {
       StarterKit,
       CodeBlockLowlight.configure({
         lowlight
+      }),
+      TaskList,
+      TaskItem.configure({
+        nested: true,
       })
     ],
-    content: '<h1>Getting Started</h1> <p>Olá 👋🏻, comece por aqui</p>',
+    content: `
+    <h1>Getting Started</h1> <p>Olá 👋🏻, comece por aqui</p>`,
     editorProps: {
       attributes: {
         class: 'outline-none'
@@ -90,6 +99,26 @@ export default function Editor() {
               <span className="text-sm">Heading 2</span>
               <span className="text-xs text-zinc-400">
                 Medium section heading.
+              </span>
+            </div>
+          </button>
+
+          <button
+            className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-600"
+            onClick={() =>
+              editor.chain().focus().toggleTaskList().run()
+            }
+            data-active={editor.isActive('taskList')}
+          >
+            <img
+              src="http://www.notion.so/images/blocks/to-do.f8d20542.png"
+              alt="text"
+              className="w-12 border border-zinc-600 rounded"
+            />
+            <div className="flex flex-col text-left">
+              <span className="text-sm">Task List</span>
+              <span className="text-xs text-zinc-400">
+                Acompanhar Tarefas com uma Lista de
               </span>
             </div>
           </button>
