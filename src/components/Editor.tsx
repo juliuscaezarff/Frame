@@ -35,7 +35,7 @@ export default function Editor() {
       }),
       TaskList,
       TaskItem.configure({
-        nested: true,
+        nested: true
       })
     ],
     content: `
@@ -50,7 +50,7 @@ export default function Editor() {
   return (
     <>
       <EditorContent
-        className="max-w-[700px] mx-auto pt-16 prose prose-invert prose-violet"
+        className="max-w-[700px] mx-auto pt-16 leading-3 prose prose-invert prose-violet"
         editor={editor}
       />
       {editor && (
@@ -105,9 +105,7 @@ export default function Editor() {
 
           <button
             className="flex items-center gap-2 p-1 rounded min-w-[280px] hover:bg-zinc-600"
-            onClick={() =>
-              editor.chain().focus().toggleTaskList().run()
-            }
+            onClick={() => editor.chain().focus().toggleTaskList().run()}
             data-active={editor.isActive('taskList')}
           >
             <img
@@ -151,7 +149,10 @@ export default function Editor() {
             >
               <RxFontItalic className="w-4 h-4" />
             </BubbleButton>
-            <BubbleButton>
+            <BubbleButton
+              onClick={() => editor.chain().focus().toggleStrike().run()}
+              data-active={editor.isActive('strike')}
+            >
               <RxStrikethrough className="w-4 h-4" />
             </BubbleButton>
             <BubbleButton>
