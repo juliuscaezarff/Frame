@@ -1,5 +1,5 @@
-import Editor  from './components/Editor'
-import  Header from './components/Header'
+import Editor from './components/Editor'
+import Header from './components/Header/Header'
 
 function App() {
   return (
