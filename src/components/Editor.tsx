@@ -9,8 +9,8 @@ import js from 'highlight.js/lib/languages/javascript'
 
 import 'highlight.js/styles/atom-one-dark.css'
 import '../styles.css'
-import { FloatingMenuComponent } from './FloatingMenuComponent'
-import { BubbleMenuComponent } from './BubbleMenuComponent'
+import { FloatingMenuComponent } from './FloatingMenuComponent/FloatingMenuComponent'
+import { BubbleMenuComponent } from './BubbleMenuComponent/BubbleMenuComponent'
 
 lowlight.registerLanguage('js', js)
 
